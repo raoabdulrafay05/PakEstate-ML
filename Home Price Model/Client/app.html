@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pakistan Real Estate Price Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="app.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="img"></div>
+    <form class="form">
+        <fieldset>
+            <legend><h2>Property Details</h2></legend>
+
+            <!-- Square Feet Input -->
+            <label for="uiSqft"><h3>Area (Square Feet)</h3></label>
+            <input type="number" name="SquareFt" value="1000" id="uiSqft" class="floatLabel" min="0">
+
+            <!-- BHK Selection -->
+            <h3>Bedroom</h3>
+            <div class="switch-field">
+                <input type="radio" name="uiBHK" id="radio-bhk-0" value="0">
+                <label for="radio-bhk-0">0</label>
+                <input type="radio" name="uiBHK" id="radio-bhk-1" value="1">
+                <label for="radio-bhk-1">1</label>
+                <input type="radio" name="uiBHK" id="radio-bhk-2" value="2" checked>
+                <label for="radio-bhk-2">2</label>
+                <input type="radio" name="uiBHK" id="radio-bhk-3" value="3">
+                <label for="radio-bhk-3">3</label>
+                <input type="radio" name="uiBHK" id="radio-bhk-4" value="4">
+                <label for="radio-bhk-4">4</label>
+                <input type="radio" name="uiBHK" id="radio-bhk-5" value="5">
+                <label for="radio-bhk-5">5</label>
+                <input type="radio" name="uiBHK" id="radio-bhk-6" value="6">
+                <label for="radio-bhk-6">6</label>
+                <input type="radio" name="uiBHK" id="radio-bhk-7" value="7">
+                <label for="radio-bhk-7">7</label>
+            </div>
+
+            <!-- Bathroom Selection -->
+            <h3>Bathroom</h3>
+            <div class="switch-field">
+                <input type="radio" id="radio-bath-0" name="uiBathrooms" value="0">
+                <label for="radio-bath-0">0</label>
+                <input type="radio" id="radio-bath-1" name="uiBathrooms" value="1">
+                <label for="radio-bath-1">1</label>
+                <input type="radio" id="radio-bath-2" name="uiBathrooms" value="2" checked>
+                <label for="radio-bath-2">2</label>
+                <input type="radio" id="radio-bath-3" name="uiBathrooms" value="3">
+                <label for="radio-bath-3">3</label>
+                <input type="radio" id="radio-bath-4" name="uiBathrooms" value="4">
+                <label for="radio-bath-4">4</label>
+                <input type="radio" id="radio-bath-5" name="uiBathrooms" value="5">
+                <label for="radio-bath-5">5</label>
+                <input type="radio" id="radio-bath-6" name="uiBathrooms" value="6">
+                <label for="radio-bath-6">6</label>
+                <input type="radio" id="radio-bath-7" name="uiBathrooms" value="7">
+                <label for="radio-bath-7">7</label>
+            </div>
+
+            <!-- City Selection -->
+            <h3>City</h3>
+            <select class="city" name="uiCity" id="uiCity" onchange="updateLocations()">
+                <option value="" disabled selected>Choose a City</option>
+            </select>
+
+            <!-- Type Selection -->
+            <h3>Property Type</h3>
+            <select class="type" name="uiType" id="uiType" onchange="updateLocations()">
+                <option value="" disabled selected>Choose a Type</option>
+            </select>
+
+            <!-- Location Selection -->
+            <h3>Location</h3>
+            <select class="location" name="uiLocations" id="uiLocations">
+                <option value="" disabled selected>Choose a Location</option>
+            </select>
+
+            <!-- Submit Button -->
+            <button class="submit" onclick="onClickedEstimatePrice()" type="button">Estimate Price</button>
+
+            <!-- Result Display -->
+            <div id="uiEstimatedPrice" class="result"><h2></h2></div>
+           
+        </fieldset>
+        <div>
+            <div id="creator">Created by: Rao Abdul Rafay</div>
+        </div>
+    </form>
+    
+    <script src="app.js"></script>
+</body>
+</html>

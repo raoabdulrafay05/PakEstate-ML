@@ -1,0 +1,587 @@
+/* CSS Variables for easy theming */
+:root {
+  --primary-color: #ff7e5f;
+  --secondary-color: #105d4b;
+  --accent-color: #eabf8b;
+  --accent-color2: #ffffff;
+  --text-color: #333;
+  --form-bg: rgba(0, 0, 0, 0.534);
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background Container: covers the entire viewport */
+.img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 160vh;
+  background: url('Document.jpg') no-repeat center center;
+  background-size: 100% auto; /* stretches horizontally */
+  filter: brightness(0.8);
+  background-position-y: 100% auto;
+}
+
+
+
+
+/* Form Container: spaced from the edges and floating */
+.form {
+  position:static;
+  margin: 100px auto;            /* space from top and centered horizontally */
+  padding: 40px 40px;           /* comfortable inner spacing */
+  max-width: 450px;             /* moderate width */
+  width: 90%;
+  background:var(--form-bg);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: float 8s ease-in-out infinite;
+  z-index: 1;
+}
+
+ /* Float animation to give the form a gentle up/down movement */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+} 
+
+/* Fieldset and Legend Styling */
+fieldset {
+  border: none;
+}
+
+legend h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Style for all headings (City, Bedroom, BHK, etc.) */
+.form h3 {
+  margin-bottom: 10px;
+  color: var(--accent-color2);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Input and Select Styling */
+.form input[type="number"],
+.form select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #f8f8f8;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.form input[type="number"]:focus,
+.form select:focus {
+  transform: scale(1.02);
+  background: #fff;
+}
+
+/* Switch Field (Radio Buttons) */
+.switch-field {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.switch-field input[type="radio"] {
+  display: none;
+}
+
+.switch-field label {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  margin: 0 3px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #f0f0f0;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.switch-field input[type="radio"]:checked + label {
+  background: var(--secondary-color);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+button.submit {
+  display: flex;                   /* Use flex layout */
+  align-items: center;             /* Vertically center the text */
+  justify-content: flex-start;     /* Align text to the left */
+  white-space: nowrap;             /* Prevent text wrapping */
+  width: 250px;                    /* Slightly longer fixed width */
+  height: 40px;                    /* Fixed height */
+  padding: 6px 12px;               /* Reduced padding for a compact look */
+  font-size: 0.9rem;               /* Smaller text size */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  background-size: 200% auto;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.3s ease;
+  animation: btnGradient 10s ease infinite, textShine 4s ease infinite;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  margin: -10px 20px 20px 0;         /* Adjusts vertical and horizontal margins */
+  border: 1px solid transparent;
+  outline: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+button.submit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 150%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-25deg);
+  transition: left 0.7s ease-in-out;
+}
+
+button.submit:hover::before {
+  left: 150%;
+}
+
+button.submit:hover {
+  transform: translateY(-6px);
+  background-position: right center;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+button.submit:active {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+button.submit:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
+}
+
+@media (max-width: 768px) {
+  button.submit {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  button.submit {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 8px;
+  }
+}
+
+@keyframes btnGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes textShine {
+  0% {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+button.submit::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+button.submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  animation: none;
+}
+
+button.submit:hover:disabled {
+  transform: none;
+  box-shadow: none;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  button.submit {
+    padding: 15px 30px;
+    font-size: 1.15rem;
+    border-radius: 11px;
+  }
+}
+
+@media (min-width: 1025px) {
+  button.submit {
+    padding: 16px 32px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+  }
+}
+
+button.submit.secondary {
+  background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  animation: btnGradientSecondary 12s ease infinite;
+}
+
+@keyframes btnGradientSecondary {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+button.submit.secondary:hover {
+  transform: translateY(-6px);
+  background-position: right center;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+button.submit.secondary:active {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+button.submit.secondary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 126, 95, 0.6);
+}
+
+button.submit.extra-effect {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 14px;
+  padding: 18px 34px;
+  transition: border-color 0.3s ease;
+}
+
+button.submit.extra-effect:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+button.submit.extra-effect:active {
+  border-color: rgba(255, 255, 255, 1);
+}
+
+@keyframes extraGlow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+}
+
+button.submit.extra-effect:focus {
+  animation: extraGlow 2s ease infinite;
+}
+
+@media (min-width: 1200px) {
+  button.submit {
+    padding: 18px 36px;
+    font-size: 1.25rem;
+    border-radius: 13px;
+  }
+}
+
+@media (max-width: 320px) {
+  button.submit {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+  }
+}
+
+button.submit:hover,
+button.submit.secondary:hover,
+button.submit.extra-effect:hover {
+  transform: translateY(-6px);
+}
+
+button.submit:active,
+button.submit.secondary:active,
+button.submit.extra-effect:active {
+  transform: translateY(-2px);
+}
+
+button.submit:focus,
+button.submit.secondary:focus,
+button.submit.extra-effect:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
+}
+
+button.submit::before,
+button.submit::after {
+  pointer-events: none;
+}
+
+button.submit,
+button.submit.secondary,
+button.submit.extra-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.3s ease, border-color 0.3s ease;
+}
+
+button.submit,
+button.submit.secondary {
+  animation-fill-mode: forwards;
+}
+
+button.submit.extra-effect {
+  animation-fill-mode: both;
+}
+
+@media (orientation: landscape) and (max-width: 768px) {
+  button.submit {
+    padding: 12px 26px;
+    font-size: 1rem;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 768px) {
+  button.submit {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+  }
+}
+
+button.submit span {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+
+button.submit::before {
+  z-index: 1;
+}
+
+button.submit::after {
+  z-index: 3;
+}
+
+button.submit.secondary span {
+  color: #fff;
+}
+
+button.submit.extra-effect span {
+  color: #fff;
+}
+
+button.submit,
+button.submit.secondary,
+button.submit.extra-effect {
+  letter-spacing: 1px;
+}
+
+button.submit,
+button.submit.secondary,
+button.submit.extra-effect {
+  text-transform: uppercase;
+}
+
+button.submit,
+button.submit.secondary,
+button.submit.extra-effect {
+  font-weight: bold;
+}
+
+button.submit,
+button.submit.secondary,
+button.submit.extra-effect {
+  user-select: none;
+}
+
+button.submit,
+button.submit.secondary,
+button.submit.extra-effect {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button.submit:disabled,
+button.submit.secondary:disabled,
+button.submit.extra-effect:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button.submit:disabled::before,
+button.submit.secondary:disabled::before,
+button.submit.extra-effect:disabled::before {
+  transition: none;
+}
+
+button.submit:disabled::after,
+button.submit.secondary:disabled::after,
+button.submit.extra-effect:disabled::after {
+  transition: none;
+}
+
+.result {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 10px 20px;
+  height: 60px;                    /* Compact fixed height */
+  background: linear-gradient(135deg, #ffffff, #f1f1f1);
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  animation: fadeInUp 0.6s ease-out;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.result::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  border-radius: 14px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+.result::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  z-index: -1;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.result h2 {
+  font-size: 10rem;           /* Big text */
+  font-weight: 700;
+  margin: 0;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
+  white-space: nowrap;         /* Ensure text stays on one line */
+}
+
+/* Hover lift effect */
+.result:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Border glow animation */
+@keyframes borderGlow {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
+}
+
+#creator {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #2c3e50;                /* Professional dark gray-blue text */
+  background-color: #ecf0f1;     /* Soft, light background */
+  padding: 6px 12px;             /* Increased padding for a balanced look */
+  border: 1px solid #bdc3c7;     /* Subtle border for definition */
+  border-radius: 8px;            /* More refined rounded corners */
+  text-align: center;
+  margin: 10px auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light, professional shadow */
+  transition: background-color 0.3s ease;
+}
+
+#creator:hover {
+  background-color: #d0d7de;     /* Slightly darker on hover */
+  animation: pulse 0.5s ease-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
