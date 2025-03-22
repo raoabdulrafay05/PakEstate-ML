@@ -1,0 +1,154 @@
+{
+  "locations_data": [
+    {
+      "type": "commercial plot",
+      "location_city": "multan",
+      "location": ["dha defence"]
+    },
+    {
+      "type": "flat",
+      "location_city": "hyderabad",
+      "location": ["qasimabad", "latifabad"]
+    },
+    {
+      "type": "flat",
+      "location_city": "karachi",
+      "location": ["dha defence", "bahria town karachi", "gulistan-e-jauhar", "gulshan-e-iqbal town"]
+    },
+    {
+      "type": "flat",
+      "location_city": "peshawar",
+      "location": ["university town", "ring road", "rahatabad"]
+    },
+    {
+      "type": "flat",
+      "location_city": "rawalpindi",
+      "location": ["bahria town rawalpindi"]
+    },
+    {
+      "type": "house",
+      "location_city": "faisalabad",
+      "location": ["canal road", "satiana road", "eden valley", "eden gardens", "wapda city"]
+    },
+    {
+      "type": "house",
+      "location_city": "gujranwala",
+      "location": ["citi housing society", "eminabad more", "dc colony", "dha defence", "garden town", "wapda town"]
+    },
+    {
+      "type": "house",
+      "location_city": "hyderabad",
+      "location": ["hyderabad bypass"]
+    },
+    {
+      "type": "house",
+      "location_city": "islamabad",
+      "location": ["dha defence", "g-15", "b-17", "g-13", "bahria town"]
+    },
+    {
+      "type": "house",
+      "location_city": "karachi",
+      "location": ["bahria town karachi", "dha defence", "scheme 33", "malir", "gulistan-e-jauhar"]
+    },
+    {
+      "type": "house",
+      "location_city": "lahore",
+      "location": ["dha defence", "bahria town", "paragon city", "park view city"]
+    },
+    {
+      "type": "house",
+      "location_city": "multan",
+      "location": ["dha defence", "multan public school road", "buch executive villas", "shalimar colony", "wapda town"]
+    },
+    {
+      "type": "house",
+      "location_city": "peshawar",
+      "location": ["warsak road", "hayatabad"]
+    },
+    {
+      "type": "house",
+      "location_city": "rawalpindi",
+      "location": ["bahria town rawalpindi", "airport housing society", "adiala road"]
+    },
+    {
+      "type": "house",
+      "location_city": "sialkot",
+      "location": ["citi housing society"]
+    },
+    {
+      "type": "office",
+      "location_city": "karachi",
+      "location": ["dha defence"]
+    },
+    {
+      "type": "office",
+      "location_city": "lahore",
+      "location": ["gulberg"]
+    },
+    {
+      "type": "residential plot",
+      "location_city": "faisalabad",
+      "location": ["wapda city", "fda city", "citi housing", "canal expressway", "canal road", "eden orchard"]
+    },
+    {
+      "type": "residential plot",
+      "location_city": "gujranwala",
+      "location": ["citi housing society", "eminabad more", "garden town", "dha defence", "palm city housing scheme", "master city housing scheme"]
+    },
+    {
+      "type": "residential plot",
+      "location_city": "hyderabad",
+      "location": ["hyderabad bypass"]
+    },
+    {
+      "type": "residential plot",
+      "location_city": "karachi",
+      "location": ["naya nazimabad", "scheme 33", "gadap town", "bahria town karachi", "dha defence"]
+    },
+    {
+      "type": "residential plot",
+      "location_city": "lahore",
+      "location": ["dha defence", "raiwind road"]
+    },
+    {
+      "type": "residential plot",
+      "location_city": "multan",
+      "location": ["dha defence", "multan public school road"]
+    },
+    {
+      "type": "residential plot",
+      "location_city": "peshawar",
+      "location": ["hayatabad", "dha defence", "regi model town"]
+    },
+    {
+      "type": "residential plot",
+      "location_city": "rawalpindi",
+      "location": ["bahria town rawalpindi", "taj residencia"]
+    },
+    {
+      "type": "residential plot",
+      "location_city": "sialkot",
+      "location": ["citi housing society"]
+    },
+    {
+      "type": "shop",
+      "location_city": "islamabad",
+      "location": ["gt road", "dha defence", "b-17"]
+    },
+    {
+      "type": "shop",
+      "location_city": "karachi",
+      "location": ["dha defence"]
+    },
+    {
+      "type": "shop",
+      "location_city": "lahore",
+      "location": ["bahria town"]
+    },
+    {
+      "type": "shop",
+      "location_city": "rawalpindi",
+      "location": ["bahria town rawalpindi"]
+    }
+  ]
+}
